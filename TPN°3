@@ -23,4 +23,15 @@ int main() {
 	printf(">=30        | Obesidad\n");
 	
 	return 0;
+
+if (imc < 18.5) {
+    printf("\nUsted se encuentra en la categoria: Bajo peso.\n");
+ } else if (imc >= 18.5 && imc <= 24.9) {
+     printf("\nUsted se encuentra en la categoria: Normal.\n");
+} else if (imc >= 25 && imc <= 29.9) {
+    printf("\nUsted se encuentra en la categoria: Sobrepeso.\n");
+} else {
+     printf("\nUsted se encuentra en la categoria: Obesidad.\n");
 }
+
+ }
