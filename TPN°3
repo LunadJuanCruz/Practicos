@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+	float peso, altura, imc;
+	
+	printf("Ingrese cuanto pesa: \n ");
+		scanf("%f", &peso);
+	
+	printf("Ingrese cuanto mide: \n");
+		scanf("%f", &altura);
+	
+
+	imc = peso / (altura * altura);
+	
+	
+	printf("Su indice de masa corporal es: %.2f\n", imc);
+	
+	printf("\n     Indice | Condicion\n");
+	printf("--------------------------\n");
+	printf("<18.5       | Bajo peso\n");
+	printf("18.5 a 24.9 | Normal\n");
+	printf("25.0 a 29.9 | Sobrepeso\n");
+	printf(">=30        | Obesidad\n");
+	
+	return 0;
+}
