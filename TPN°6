@@ -1,0 +1,133 @@
+#include <stdio.h>
+#include <math.h>
+
+int ingresar_y_validar_opcion(void);
+
+float calcularAreaRectangulo(float, float);
+float calcularPerimetroRectangulo(float, float);
+float calcularDiagonalRectangulo(float, float);
+float calcularAreaCirculo(float);
+float calcularPerimetroCirculo(float);
+
+void imprimirresultadosR(float, float, float);
+void imprimirresultadosC(float, float);
+
+int main(void) {
+	
+	int op;
+	
+	op = ingresar_y_validar_opcion();
+	
+	if (op == 1) {
+		float alto, largo;
+		printf("\n---------------------------------------------------------------- \n");
+		printf("Ingrese los valores de alto y largo del rectángulo:\n");
+		scanf("%f %f", &alto, &largo);
+		
+		float areaR;
+			areaR = calcularAreaRectangulo(alto, largo);
+		
+		float perimetroR;
+			perimetroR = calcularPerimetroRectangulo(alto, largo);
+		
+		float diagonal;
+			diagonal = calcularDiagonalRectangulo(alto, largo);
+		
+			
+		imprimirresultadosR(areaR, perimetroR, diagonal);
+	}
+	
+	if (op == 2) {
+		float diametro;
+		printf("\n---------------------------------------------------------------- \n");
+		printf("Ingrese el valor del diámetro del círculo:\n");
+		scanf("%f", &diametro);
+		
+		float areaC;
+			areaC = calcularAreaCirculo(diametro);
+		
+		float perimetroC;
+			perimetroC = calcularPerimetroCirculo(diametro);
+		
+		imprimirresultadosC(areaC, perimetroC);
+	}
+	
+	return 0;
+}
+
+
+int ingresar_y_validar_opcion(void) {
+	int op;
+	
+	printf("Ingrese la figura que desee calcular:\n");
+	printf("(1) _ Rectángulo\n(2) _ Círculo \n \n");
+	scanf("%d", &op);
+	
+	while (op < 1 || op > 2) {
+		printf("-----------------------------------------------------------------\n\n");
+		printf("Ingrese una opción válida por favor:\n");
+		scanf("%d", &op);
+	}
+	
+	return op;
+}
+
+
+float calcularAreaRectangulo(float alto, float largo) {
+	float areaR;
+	
+	areaR = alto * largo;
+	
+	return areaR;
+}
+
+float calcularPerimetroRectangulo(float alto, float largo) {
+	float perimetroR;
+	
+	perimetroR = 2 * (alto + largo);
+	
+	return perimetroR;
+}
+
+float calcularDiagonalRectangulo(float alto, float largo) {
+	float diagonal;
+	
+	diagonal = sqrt((alto * alto) + (largo * largo));
+	
+	return diagonal;
+}
+
+
+float calcularAreaCirculo(float diametro) {
+	float radio;
+	float areaC;
+	
+	radio = diametro / 2;
+	areaC = 3.141592 * radio * radio;
+	
+	return areaC;
+}
+
+float calcularPerimetroCirculo(float diametro) {
+	float perimetroC;
+	
+	perimetroC = 3.141592 * diametro;
+	
+	return perimetroC;
+}
+
+
+void imprimirresultadosR(float areaR, float perimetroR, float diagonal) {
+	printf("\n-----------------------------------------------------------------\n\n");
+	printf("El área del rectángulo es: %.2f\n", areaR);
+	printf("El perímetro del rectángulo es: %.2f\n", perimetroR);
+	printf("La diagonal del rectángulo es: %.2f\n", diagonal);
+	printf("\n-----------------------------------------------------------------\n\n");
+}
+
+void imprimirresultadosC(float areaC, float perimetroC) {
+	printf("\n-----------------------------------------------------------------\n\n");
+	printf("El área del círculo es: %.2f\n", areaC);
+	printf("El perímetro del círculo es: %.2f\n", perimetroC);
+	printf("\n-----------------------------------------------------------------\n\n");
+}
