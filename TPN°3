@@ -5,10 +5,19 @@ int main() {
 	
 	printf("Ingrese cuanto pesa: \n ");
 		scanf("%f", &peso);
+
+	while((peso <= 0)){
+		printf("ERROR:Debe ingresar un valor positivo de peso\n Ingrese cuanto pesa: \n ");
+		scanf("%f", &peso);
+	}
 	
 	printf("Ingrese cuanto mide: \n");
 		scanf("%f", &altura);
 	
+	while((altura <= 0)){
+		printf("ERROR:Debe ingresar un valor positivo de altura\n Ingrese cuanto mide: \n ");
+		scanf("%f", &altura);
+	}
 
 	imc = peso / (altura * altura);
 	
